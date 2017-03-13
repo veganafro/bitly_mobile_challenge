@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        Bitly.initialize("")
+        Bitly.initialize("6deeedfbd3504a71187d7d88b60b78cadbaf8edd")
         // Override point for customization after application launch.
         return true
     }
