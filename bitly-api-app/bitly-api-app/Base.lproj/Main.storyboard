@@ -25,7 +25,31 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkD-wc-jFE">
                                 <rect key="frame" x="112" y="318" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="save links">
+                                <state key="normal" title="save link">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwT-o2-Jwb">
+                                <rect key="frame" x="112" y="373" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="link history">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHJ-2k-QhZ">
+                                <rect key="frame" x="112" y="428" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="link clicks">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -37,8 +61,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93479156494140625" green="0.3785628080368042" blue="0.13990300893783569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="YwT-o2-Jwb" firstAttribute="trailing" secondItem="rkD-wc-jFE" secondAttribute="trailing" id="98e-co-yFX"/>
+                            <constraint firstItem="YwT-o2-Jwb" firstAttribute="top" secondItem="rkD-wc-jFE" secondAttribute="bottom" constant="25" id="K5D-g4-0In"/>
+                            <constraint firstItem="iHJ-2k-QhZ" firstAttribute="leading" secondItem="YwT-o2-Jwb" secondAttribute="leading" id="T9y-t8-RZC"/>
+                            <constraint firstItem="YwT-o2-Jwb" firstAttribute="leading" secondItem="rkD-wc-jFE" secondAttribute="leading" id="a89-9w-qkU"/>
                             <constraint firstItem="rkD-wc-jFE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bba-0E-GE7"/>
                             <constraint firstItem="rkD-wc-jFE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fjl-CJ-8In"/>
+                            <constraint firstItem="iHJ-2k-QhZ" firstAttribute="trailing" secondItem="YwT-o2-Jwb" secondAttribute="trailing" id="iLz-Ip-wjr"/>
+                            <constraint firstItem="iHJ-2k-QhZ" firstAttribute="top" secondItem="YwT-o2-Jwb" secondAttribute="bottom" constant="25" id="k0u-y1-pKl"/>
                             <constraint firstItem="rkD-wc-jFE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="96" id="qru-h3-UPg"/>
                         </constraints>
                     </view>
