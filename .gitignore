@@ -1,5 +1,6 @@
 *.plist
 */*.xcodeproj
+*/*.xcworkspace
 
 *.lock
 */Pods/
