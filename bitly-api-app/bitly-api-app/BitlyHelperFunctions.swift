@@ -17,7 +17,7 @@ class BitlyHelperFunctions: NSObject {
     
     // we have a global base URL that can be used to reach specific API endpoints
     static var baseURL = "https://api-ssl.bitly.com/v3/user/"
-    static var accessToken = ""
+    static var accessToken = AppDelegate.globalAccessToken
     
     /*
         The function below uses the /v3/user/link_save endpoint of the Bitly API to save a long URL
