@@ -24,7 +24,11 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    /*
+        This function defines actions that occur after a user confirms that they are finished saving a link
+     */
+    @IBAction func doneSavingLink(segue: UIStoryboardSegue) {
+    }
 
     /*
     // MARK: - Navigation
