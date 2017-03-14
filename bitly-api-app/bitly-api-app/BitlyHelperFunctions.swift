@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BitlySDK
 
 /*
     This file contains globally used helper functions that communicate with the Bitly API endpoints.
@@ -14,4 +15,18 @@ import UIKit
  */
 class BitlyHelperFunctions: NSObject {
 
+    /*
+        The function below uses the /v3/user/link_save endpoint of the Bitly API to save a long URL
+        as a Bitlink in a user's history.
+     
+        @param longURL
+            - this is the URL that will be saved as a Bitlink
+     
+        @param title
+            - the title of the Bitlink associated with longURL
+     */
+    static func linkSave(longURL: String, title: String) {
+    
+        
+    }
 }
