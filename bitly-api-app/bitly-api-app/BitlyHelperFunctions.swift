@@ -63,4 +63,12 @@ class BitlyHelperFunctions: NSObject {
             // resume the task if it has been suspended
         }.resume()
     }
+    
+    /*
+        This function uses /v3/user/link_history endpoint of the Bitly API to get a user's Bitlink
+        history in reverse chronological order
+     */
+    static func linkHistory() {
+    
+    }
 }
