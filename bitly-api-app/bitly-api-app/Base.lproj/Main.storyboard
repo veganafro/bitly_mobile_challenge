@@ -130,6 +130,10 @@
                             <constraint firstItem="Kl1-yu-bq2" firstAttribute="leading" secondItem="PG9-KN-2g2" secondAttribute="leadingMargin" constant="71" id="rkE-hE-gkd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="longURLTextField" destination="Kl1-yu-bq2" id="bsv-Ct-ere"/>
+                        <outlet property="urlTitleTextField" destination="GOx-2H-FjR" id="tAW-Fl-X3o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5n-wh-SB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Jp8-2g-PaF" userLabel="Exit" sceneMemberID="exit"/>

@@ -13,6 +13,14 @@ import UIKit
  */
 class SaveLinksViewController: UIViewController {
 
+    /*
+        Create variables linked to the two text fields on the SaveLinks view controller
+     */
+    
+    @IBOutlet weak var longURLTextField: UITextField!
+    @IBOutlet weak var urlTitleTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
