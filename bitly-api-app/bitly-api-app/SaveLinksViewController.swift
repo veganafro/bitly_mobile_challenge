@@ -55,6 +55,9 @@ class SaveLinksViewController: UIViewController {
             // present the alert
             self.present(alert, animated: true, completion: nil)
         }
+        else {
+            self.performSegue(withIdentifier: "cancelSavingLinkSegue", sender: nil)
+        }
     }
 
     // MARK: - Navigation
