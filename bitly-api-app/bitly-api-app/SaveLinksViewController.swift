@@ -24,6 +24,11 @@ class SaveLinksViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /*
+        This function defines what occurs when the user taps the done, indicating that they want to save a link
+     */
+    @IBAction func didTapDoneButton(_ sender: Any) {
+    }
 
     // MARK: - Navigation
 

@@ -113,6 +113,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="didTapDoneButton:" destination="Efp-YH-ypB" eventType="touchUpInside" id="LYt-Sq-bDy"/>
                                     <segue destination="Jp8-2g-PaF" kind="unwind" unwindAction="doneSavingLinkWithSegue:" id="qXZ-Qd-OiT"/>
                                 </connections>
                             </button>
