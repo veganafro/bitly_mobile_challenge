@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
-        <!--View Controller-->
+        <!--Save Links View Controller-->
         <scene sceneID="zAR-DA-Y7a">
             <objects>
-                <viewController id="Efp-YH-ypB" sceneMemberID="viewController">
+                <viewController id="Efp-YH-ypB" customClass="SaveLinksViewController" customModule="bitly_api_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ldb-LT-MCS"/>
                         <viewControllerLayoutGuide type="bottom" id="xbv-cK-mIS"/>
