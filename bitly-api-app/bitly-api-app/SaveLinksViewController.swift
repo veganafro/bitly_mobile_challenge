@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+    This class defines behaviors for the SaveLinks view controller
+ */
 class SaveLinksViewController: UIViewController {
 
     override func viewDidLoad() {
