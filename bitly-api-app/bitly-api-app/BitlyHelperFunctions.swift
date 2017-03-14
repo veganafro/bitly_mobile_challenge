@@ -31,10 +31,22 @@ class BitlyHelperFunctions: NSObject {
      */
     static func linkSave(longURL: String, title: String) {
         
-        //
+        // begin by creating the full length endpoint that should be accessed
         let endPoint = baseURL + "link_save?access_token=\(accessToken)&longUrl=\(longURL)"
         
+        // create a URLRequest object that creates a GET request to the endpoint created above
         var request = URLRequest(url: URL(string: endPoint)!)
         request.httpMethod = "GET"
+        
+        // create a background task using the URLSession class
+        let session = URLSession.shared
+        
+        // create a task that retrieves the contents at the specified URL
+        session.dataTask(with: request) {
+            
+            // after retrieving the contents of the URL, handle the returned values with this completion block
+            (data, response, error) -> Void in
+        
+        }
     }
 }
