@@ -44,9 +44,20 @@ class BitlyHelperFunctions: NSObject {
         // create a task that retrieves the contents at the specified URL
         session.dataTask(with: request) {
             
-            // after retrieving the contents of the URL, handle the returned values with this completion block
+            // after retrieving the contents of the URL, handle the returned values with this completion handler
             (data, response, error) -> Void in
-        
-        }
+            
+            // cast the URLResponse? object to a HTTPURLResponse and get the status code returned after making
+            // the GET request specified above
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            // if the status code returned is 200, everthing went well
+            if (statusCode == 200) {
+                print("LINK SAVE GET REQUEST SUCCESSFULL")
+            }
+            
+            // resume the task if it has been suspended
+        }.resume()
     }
 }
