@@ -30,6 +30,6 @@ class BitlyHelperFunctions: NSObject {
      */
     static func linkSave(longURL: String, title: String) {
         
-        var request = URLRequest(url: URL(string: baseURL))
+        var request = URLRequest(url: URL(string: baseURL)!)
     }
 }
