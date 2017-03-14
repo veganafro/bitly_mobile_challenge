@@ -33,6 +33,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Efp-YH-ypB" kind="presentation" identifier="saveLinkSegue" id="G2D-e8-NLU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwT-o2-Jwb">
                                 <rect key="frame" x="112" y="373.5" width="151" height="30"/>
