@@ -28,6 +28,9 @@ class SaveLinksViewController: UIViewController {
         This function defines what occurs when the user taps the done, indicating that they want to save a link
      */
     @IBAction func didTapDoneButton(_ sender: Any) {
+        
+        // add a print statement for debugging
+        print("DONE BUTTON PRESSED")
     }
 
     // MARK: - Navigation
