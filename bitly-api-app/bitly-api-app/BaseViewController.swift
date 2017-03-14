@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+    This class defines behaviors the initial view controller
+ */
 class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -20,6 +23,7 @@ class BaseViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*
