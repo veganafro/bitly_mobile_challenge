@@ -55,7 +55,13 @@ class SaveLinksViewController: UIViewController {
             // present the alert
             self.present(alert, animated: true, completion: nil)
         }
+        // if the user did enter text into the text field, attempt to save the link
         else {
+            
+            // save the link using the predefined function
+            BitlyHelperFunctions.linkSave(longURL: longURLTextField.text!, title: urlTitleTextField.text!)
+            
+            // segue back to the base view controller
             self.performSegue(withIdentifier: "cancelSavingLinkSegue", sender: nil)
         }
     }

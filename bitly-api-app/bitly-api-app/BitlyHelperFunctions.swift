@@ -56,6 +56,9 @@ class BitlyHelperFunctions: NSObject {
             if (statusCode == 200) {
                 print("LINK SAVE GET REQUEST SUCCESSFULL")
             }
+            else {
+                print("LINK SAVE GET REQUEST UNSUCCESSFULL - \(statusCode)")
+            }
             
             // resume the task if it has been suspended
         }.resume()
