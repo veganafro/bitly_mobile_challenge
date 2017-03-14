@@ -8,6 +8,10 @@
 
 import UIKit
 
+/*
+    This file contains globally used helper functions that communicate with the Bitly API endpoints.
+    The project is architected in this way to separate UI logic from backend logic.
+ */
 class BitlyHelperFunctions: NSObject {
 
 }
