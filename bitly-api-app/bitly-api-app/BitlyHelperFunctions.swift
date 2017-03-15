@@ -33,7 +33,7 @@ class BitlyHelperFunctions: NSObject {
         @param title
             - the title of the Bitlink associated with longURL
      */
-    static func linkSave(longURL: String, title: String) {
+    static func linkSave(longURL: String, title: String) -> Void {
         
         // begin by creating the full length endpoint that should be accessed
         let endPoint = baseURL + "link_save?access_token=\(accessToken)&longUrl=\(longURL)"
