@@ -122,6 +122,8 @@ class BitlyHelperFunctions: NSObject {
                     print("LINK HISTORY JSON SERIALIZATION UNSUCCESSFULL")
                 }
             }
-        }
+            
+            // resume the task if it has been suspended
+        }.resume()
     }
 }
