@@ -111,7 +111,7 @@ class BitlyHelperFunctions: NSObject {
                     // create a variable to store pretty printed JSON
                     let json = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:AnyObject]
                     
-                    // traverse the levels of JSON nesting to access the link history
+                    // traverse the levels of JSON nesting to access the link history data
                     let jsonData = json["data"] as! [String:AnyObject]
                     let linkHistoryData = jsonData["link_history"] as! [[String:AnyObject]]
                     
@@ -137,13 +137,16 @@ class BitlyHelperFunctions: NSObject {
         This function uses the /v3/user/clicks endpoint of the Bitly API to get the aggregate number of clicks
         on all the of the user's links
      
-        @return Void
-            - this function does not have a return value
+        @return Int
+            - this function returns the total number of clicks on all Bitlinks over the past 7 days
      */
-    static func getLinkClicks() -> Void {
+    static func getLinkClicks() -> Int {
         
         // begin by creating the full length endpoint that should be accessed
         let endPoint = baseURL + "clicks?access_token=\(accessToken)"
+        
+        // keep a viriable to the total number of clicks for all Bitlinks
+        var totalClicks = 0
         
         // create a URLRequest object that creates a GET request to the endpoint created above
         var request = URLRequest(url: URL(string: endPoint)!)
@@ -169,12 +172,28 @@ class BitlyHelperFunctions: NSObject {
                 
                 // try to interpret the returned JSON object
                 do {
+                    
+                    // create a variable to store pretty printed JSON
+                    let json = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:AnyObject]
+                    
+                    // traverse the levels of JSON nesting to access the link click data
+                    let jsonData = json["data"] as! [String:AnyObject]
+                    let linkClickData = jsonData["user_clicks"] as! [[String:Int]]
+                    
+                    // iterate over each Bitlink and increment the total number of clicks
+                    for link in linkClickData {
+                        
+                        totalClicks += link["clicks"]!
+                    }
                 }
                 catch{
+                    print("LINK CLICKS JSON SERIALIZATION USUCCSESSFULL")
                 }
             }
             
             // resume the task if it's been suspended
         }.resume()
+        
+        return totalClicks
     }
 }
