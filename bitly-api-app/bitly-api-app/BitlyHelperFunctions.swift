@@ -85,6 +85,9 @@ class BitlyHelperFunctions: NSObject {
         let session = URLSession.shared
         
         // create a task that retrieves the contents at the specified URL
-    
+        session.dataTask(with: request) {
+            
+            (data, response, error) -> Void in
+        }
     }
 }
