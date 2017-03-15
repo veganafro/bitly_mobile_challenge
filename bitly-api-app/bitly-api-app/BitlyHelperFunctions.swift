@@ -118,7 +118,6 @@ class BitlyHelperFunctions: NSObject {
                     // traverse the levels of JSON nesting to access the link history data
                     let jsonData = json["data"] as! [String:AnyObject]
                     let linkHistoryData = jsonData["link_history"] as! [[String:AnyObject]]
-                    print(linkHistoryData)
                     
                     // iterate over each Bitlink that is represented as a dictionary and store the links in the set
                     for link in linkHistoryData {
