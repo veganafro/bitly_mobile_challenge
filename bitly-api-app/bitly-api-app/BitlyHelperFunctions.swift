@@ -143,7 +143,7 @@ class BitlyHelperFunctions: NSObject {
     static func getLinkClicks() -> Void {
         
         // begin by creating the full length endpoint that should be accessed
-        let endPoint = baseURL + "link_history?access_token=\(accessToken)"
+        let endPoint = baseURL + "clicks?access_token=\(accessToken)"
         
         // create a URLRequest object that creates a GET request to the endpoint created above
         var request = URLRequest(url: URL(string: endPoint)!)
