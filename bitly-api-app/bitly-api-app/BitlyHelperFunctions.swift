@@ -99,6 +99,22 @@ class BitlyHelperFunctions: NSObject {
             // if the status code returned is 200, everthing went well so load the Bitlink into the set
             if (statusCode == 200) {
             
+                // try to interpret the returned JSON object
+                do {
+                    
+                    // create a variable to store pretty printed JSON
+                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
+                    
+                    // traverse the levels of JSON nesting to access the link history
+                    let jsonData = json["data"] as! [String:Any]
+                    let linkHistoryData = jsonData["link_history"] as! [[String:Any]]
+                    
+                    
+                }
+                // catch any errors and print debugging statement
+                catch {
+                    print("LINK HISTORY JSON SERIALIZATION UNSUCCESSFULL")
+                }
             }
         }
     }
