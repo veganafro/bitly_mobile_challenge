@@ -25,6 +25,27 @@ class BaseViewController: UIViewController {
     }
     
     /*
+        This function defines actions that occur after a user taps the 'link clicks' button
+     */
+    @IBAction func didTapLinkClicks(_ sender: Any) {
+        
+        // save the total clicks on all Bitlinks over the past 7 days
+        let clicks = BitlyHelperFunctions.getLinkClicks()
+        
+        // create a title and message that will let the user know how many clicks their bitlinks have
+        let title = "Total clicks in the past 7 days"
+        let message = "\(clicks)"
+        
+        // create an alert object that will be presented
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // add an action for users to interact with to the alert
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        // present the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    /*
         This function defines actions that occur after a user confirms that they are finished saving a link
      */
     @IBAction func doneSavingLink(segue: UIStoryboardSegue) {

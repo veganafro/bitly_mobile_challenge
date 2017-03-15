@@ -60,6 +60,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapLinkClicks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ev-32-ID5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93479156494140625" green="0.3785628080368042" blue="0.13990300893783569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
