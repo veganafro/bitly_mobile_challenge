@@ -90,6 +90,11 @@ class BitlyHelperFunctions: NSObject {
             // after retrieving the contets of the URL, handle the returned values with this completion handler
             // iterate over the data and store the bitlinks in the linkHistorySet data structure
             (data, response, error) -> Void in
+            
+            // cast the URLResponse? object to a HTTPURLResponse and get the status code returned after making
+            // the GET request specified above
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
         }
     }
 }
