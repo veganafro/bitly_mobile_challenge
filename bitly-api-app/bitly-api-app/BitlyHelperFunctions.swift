@@ -95,6 +95,11 @@ class BitlyHelperFunctions: NSObject {
             // the GET request specified above
             let httpResponse = response as! HTTPURLResponse
             let statusCode = httpResponse.statusCode
+            
+            // if the status code returned is 200, everthing went well so load the Bitlink into the set
+            if (statusCode == 200) {
+            
+            }
         }
     }
 }
