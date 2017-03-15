@@ -72,7 +72,7 @@ class BitlyHelperFunctions: NSObject {
         This function uses /v3/user/link_history endpoint of the Bitly API to get a user's Bitlink
         history in reverse chronological order
      */
-    static func linkHistory() {
+    static func getLinkHistory() {
     
     }
 }
