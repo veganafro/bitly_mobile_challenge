@@ -73,6 +73,18 @@ class BitlyHelperFunctions: NSObject {
         history in reverse chronological order
      */
     static func getLinkHistory() {
+        
+        // begin by creating the full length endpoint that should be accessed
+        let endPoint = baseURL + "link_save?access_token=\(accessToken)"
+        
+        // create a URLRequest object that creates a GET request to the endpoint created above
+        var request = URLRequest(url: URL(string: endPoint)!)
+        request.httpMethod = "GET"
+        
+        // create a background task using the URLSession class
+        let session = URLSession.shared
+        
+        // create a task that retrieves the contents at the specified URL
     
     }
 }
