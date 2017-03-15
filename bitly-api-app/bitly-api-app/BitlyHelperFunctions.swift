@@ -19,6 +19,7 @@ class BitlyHelperFunctions: NSObject {
     static var baseURL = "https://api-ssl.bitly.com/v3/user/"
     static var accessToken = AppDelegate.globalAccessToken
     
+    // create a set to store the Bitlinks in a user's history
     static var linkHistorySet = Set<String>()
     
     /*
