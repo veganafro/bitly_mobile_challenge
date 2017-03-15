@@ -156,5 +156,52 @@
             </objects>
             <point key="canvasLocation" x="945" y="37"/>
         </scene>
+        <!--Link History Table View Controller-->
+        <scene sceneID="87Z-ap-uRd">
+            <objects>
+                <tableViewController id="Pi3-PR-eVc" customClass="LinkHistoryTableViewController" customModule="bitly_api_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TYG-xg-9cb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rii-WH-vCp">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rii-WH-vCp" id="6bf-fU-5Zy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Pi3-PR-eVc" id="TW2-9a-VtX"/>
+                            <outlet property="delegate" destination="Pi3-PR-eVc" id="L62-bZ-Xdm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="7wy-oL-E7a"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNa-Nk-NYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2696.8000000000002" y="37.331334332833585"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ibL-xi-Ig1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XJF-e2-tTT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Ku-2k-jEa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pi3-PR-eVc" kind="relationship" relationship="rootViewController" id="oS2-6t-P7g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xwZ-ck-m6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757.5999999999999" y="36.431784107946029"/>
+        </scene>
     </scenes>
 </document>

@@ -22,6 +22,7 @@ class BitlyHelperFunctions: NSObject {
     // create a set to store the Bitlinks in a user's history
     // this is done to assure no duplicate data will be displayed
     static var linkHistorySet = Set<String>()
+    static var linkHistoryTable = Dictionary<String, String>()
     
     // keep a viriable to the total number of clicks for all Bitlinks
     static var totalClicks: Int = 0
@@ -121,8 +122,11 @@ class BitlyHelperFunctions: NSObject {
                     // iterate over each Bitlink that is represented as a dictionary and store the links in the set
                     for link in linkHistoryData {
                     
-                        // create a variable to store the link then insert it into the set
+                        // create a variable to store the link and title then insert them into the set and dictionary
                         let bitlink = link["link"] as! String
+                        let title = link["title"] as! String
+                        
+                        linkHistoryTable[bitlink] = title
                         linkHistorySet.insert(bitlink)
                     }
                 }
