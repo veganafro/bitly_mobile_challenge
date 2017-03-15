@@ -41,8 +41,8 @@ class LinkHistoryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // deque a cell to be reused
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
+        // deque a cell to be reused and if a cell is not available for dequeing, initialize a new one
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell") ?? UITableViewCell(style: .subtitle, reuseIdentifier: "tableCell")
         
         // Configure the cell...
         // get a bitlink from the array of bitlinks
