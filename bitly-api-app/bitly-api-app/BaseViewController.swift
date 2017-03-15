@@ -24,13 +24,21 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // because HTTP requests are executed on background threads, recalculate data each time the view appears
+        // this way, when the user asks to see data, it is the most recently refreshed data possible
+        BitlyHelperFunctions.getLinkHistory()
+        BitlyHelperFunctions.getLinkClicks()
+    }
+    
     /*
         This function defines actions that occur after a user taps the 'link clicks' button
      */
     @IBAction func didTapLinkClicks(_ sender: Any) {
         
         // save the total clicks on all Bitlinks over the past 7 days
-        let clicks = BitlyHelperFunctions.getLinkClicks()
+        let clicks = BitlyHelperFunctions.totalClicks
         
         // create a title and message that will let the user know how many clicks their bitlinks have
         let title = "Total clicks in the past 7 days"
@@ -57,11 +65,6 @@ class BaseViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "saveLinkSegue" {
-            BitlyHelperFunctions.getLinkHistory()
-            print(BitlyHelperFunctions.linkHistorySet)
-        }
     }
 
 }

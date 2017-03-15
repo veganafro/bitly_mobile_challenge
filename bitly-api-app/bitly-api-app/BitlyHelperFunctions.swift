@@ -23,6 +23,9 @@ class BitlyHelperFunctions: NSObject {
     // this is done to assure no duplicate data will be displayed
     static var linkHistorySet = Set<String>()
     
+    // keep a viriable to the total number of clicks for all Bitlinks
+    static var totalClicks: Int = 0
+    
     /*
         The function below uses the /v3/user/link_save endpoint of the Bitly API to save a long URL
         as a Bitlink in a user's history.
@@ -138,15 +141,12 @@ class BitlyHelperFunctions: NSObject {
         on all the of the user's links
      
         @return Int
-            - this function returns the total number of clicks on all Bitlinks over the past 7 days
+            - this function does not have a return value
      */
-    static func getLinkClicks() -> Int {
+    static func getLinkClicks() -> Void {
         
         // begin by creating the full length endpoint that should be accessed
         let endPoint = baseURL + "clicks?access_token=\(accessToken)"
-        
-        // keep a viriable to the total number of clicks for all Bitlinks
-        var totalClicks = 0
         
         // create a URLRequest object that creates a GET request to the endpoint created above
         var request = URLRequest(url: URL(string: endPoint)!)
@@ -178,13 +178,16 @@ class BitlyHelperFunctions: NSObject {
                     
                     // traverse the levels of JSON nesting to access the link click data
                     let jsonData = json["data"] as! [String:AnyObject]
-                    let linkClickData = jsonData["user_clicks"] as! [[String:Int]]
-                    
-                    // iterate over each Bitlink and increment the total number of clicks
-                    for link in linkClickData {
-                        
-                        totalClicks += link["clicks"]!
-                    }
+                    totalClicks = jsonData["total_clicks"]! as! Int
+                    print(totalClicks)
+//                    print(jsonData)
+//                    let linkClickData = jsonData["total_clicks"] as! [[String:AnyObject]]
+//                    
+//                    // iterate over each Bitlink and increment the total number of clicks
+//                    for link in linkClickData {
+//                        
+//                        totalClicks += (link["clicks"]! as! Int)
+//                    }
                 }
                 catch{
                     print("LINK CLICKS JSON SERIALIZATION USUCCSESSFULL")
@@ -194,6 +197,6 @@ class BitlyHelperFunctions: NSObject {
             // resume the task if it's been suspended
         }.resume()
         
-        return totalClicks
+        print(totalClicks)
     }
 }
