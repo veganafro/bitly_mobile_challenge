@@ -141,5 +141,40 @@ class BitlyHelperFunctions: NSObject {
             - this function does not have a return value
      */
     static func getLinkClicks() -> Void {
+        
+        // begin by creating the full length endpoint that should be accessed
+        let endPoint = baseURL + "link_history?access_token=\(accessToken)"
+        
+        // create a URLRequest object that creates a GET request to the endpoint created above
+        var request = URLRequest(url: URL(string: endPoint)!)
+        request.httpMethod = "GET"
+        
+        // create a background task using the URLSession class
+        let session = URLSession.shared
+        
+        // create a task that retrieves the contents at the specified URL
+        session.dataTask(with: request) {
+            
+            // after retrieving the contets of the URL, handle the returned values with this completion handler
+            // iterate over the data and store the bitlinks in the linkHistorySet data structure
+            (data, response, error) -> Void in
+            
+            // cast the URLResponse? object to a HTTPURLResponse and get the status code returned after making
+            // the GET request specified above
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            // if the status code returned is 200, everthing went well so load the Bitlink into the set
+            if (statusCode == 200) {
+                
+                // try to interpret the returned JSON object
+                do {
+                }
+                catch{
+                }
+            }
+            
+            // resume the task if it's been suspended
+        }.resume()
     }
 }
