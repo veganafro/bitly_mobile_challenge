@@ -87,6 +87,8 @@ class BitlyHelperFunctions: NSObject {
         // create a task that retrieves the contents at the specified URL
         session.dataTask(with: request) {
             
+            // after retrieving the contets of the URL, handle the returned values with this completion handler
+            //
             (data, response, error) -> Void in
         }
     }
