@@ -109,7 +109,11 @@ class BitlyHelperFunctions: NSObject {
                     let jsonData = json["data"] as! [String:Any]
                     let linkHistoryData = jsonData["link_history"] as! [[String:Any]]
                     
+                    // iterate over each Bitlink that is represented as a dictionary and store the links in the set
+                    for link in linkHistoryData {
                     
+                        
+                    }
                 }
                 // catch any errors and print debugging statement
                 catch {
