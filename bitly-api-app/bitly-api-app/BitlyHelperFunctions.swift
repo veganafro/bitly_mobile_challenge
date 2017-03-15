@@ -140,6 +140,6 @@ class BitlyHelperFunctions: NSObject {
         @return Void
             - this function does not have a return value
      */
-    static func getLinkClicks() {
+    static func getLinkClicks() -> Void {
     }
 }
