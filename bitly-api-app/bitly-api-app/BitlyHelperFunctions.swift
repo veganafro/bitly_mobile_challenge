@@ -20,6 +20,7 @@ class BitlyHelperFunctions: NSObject {
     static var accessToken = AppDelegate.globalAccessToken
     
     // create a set to store the Bitlinks in a user's history
+    // this is done to assure no duplicate data will be displayed
     static var linkHistorySet = Set<String>()
     
     /*
