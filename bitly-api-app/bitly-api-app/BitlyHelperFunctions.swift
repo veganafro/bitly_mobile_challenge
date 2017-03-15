@@ -32,6 +32,9 @@ class BitlyHelperFunctions: NSObject {
      
         @param title
             - the title of the Bitlink associated with longURL
+     
+        @return Void
+            - this function does not return any values
      */
     static func linkSave(longURL: String, title: String) -> Void {
         
@@ -71,6 +74,9 @@ class BitlyHelperFunctions: NSObject {
     /*
         This function uses /v3/user/link_history endpoint of the Bitly API to get a user's Bitlink
         history in reverse chronological order
+     
+        @return - Void
+            - this function does not have any return values
      */
     static func getLinkHistory() -> Void {
         
@@ -125,5 +131,15 @@ class BitlyHelperFunctions: NSObject {
             
             // resume the task if it has been suspended
         }.resume()
+    }
+    
+    /*
+        This function uses the /v3/user/clicks endpoint of the Bitly API to get the aggregate number of clicks
+        on all the of the user's links
+     
+        @return Void
+            - this function does not have a return value
+     */
+    static func getLinkClicks() {
     }
 }
