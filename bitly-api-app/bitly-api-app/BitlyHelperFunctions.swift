@@ -112,7 +112,9 @@ class BitlyHelperFunctions: NSObject {
                     // iterate over each Bitlink that is represented as a dictionary and store the links in the set
                     for link in linkHistoryData {
                     
-                        
+                        // create a variable to store the link then insert it into the set
+                        let bitlink = link["link"] as! String
+                        linkHistorySet.insert(bitlink)
                     }
                 }
                 // catch any errors and print debugging statement
