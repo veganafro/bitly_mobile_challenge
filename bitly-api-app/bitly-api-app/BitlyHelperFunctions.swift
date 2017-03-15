@@ -88,7 +88,7 @@ class BitlyHelperFunctions: NSObject {
         session.dataTask(with: request) {
             
             // after retrieving the contets of the URL, handle the returned values with this completion handler
-            //
+            // iterate over the data and store the bitlinks in the linkHistorySet data structure
             (data, response, error) -> Void in
         }
     }
