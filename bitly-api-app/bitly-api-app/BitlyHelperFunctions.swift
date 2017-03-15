@@ -43,7 +43,7 @@ class BitlyHelperFunctions: NSObject {
     static func linkSave(longURL: String, title: String) -> Void {
         
         // begin by creating the full length endpoint that should be accessed
-        let endPoint = baseURL + "link_save?access_token=\(accessToken)&longUrl=\(longURL)"
+        let endPoint = baseURL + "link_save?access_token=\(accessToken)&longUrl=\(longURL)&title=\(title)"
         
         // create a URLRequest object that creates a GET request to the endpoint created above
         var request = URLRequest(url: URL(string: endPoint)!)

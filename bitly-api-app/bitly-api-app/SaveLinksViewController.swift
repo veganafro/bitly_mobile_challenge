@@ -61,12 +61,12 @@ class SaveLinksViewController: UIViewController {
             // save the link using the predefined function
             BitlyHelperFunctions.linkSave(longURL: longURLTextField.text!, title: urlTitleTextField.text!)
             
-            // update the link history to contain the new link
-            BitlyHelperFunctions.getLinkHistory()
-            
             // segue back to the base view controller
             self.performSegue(withIdentifier: "cancelSavingLinkSegue", sender: nil)
         }
+        
+        // update the link history to contain the new link
+        BitlyHelperFunctions.getLinkHistory()
     }
 
     // MARK: - Navigation

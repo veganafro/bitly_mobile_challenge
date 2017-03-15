@@ -57,6 +57,11 @@ class BaseViewController: UIViewController {
         This function defines actions that occur after a user confirms that they are finished saving a link
      */
     @IBAction func doneSavingLink(segue: UIStoryboardSegue) {
+        
+        // because HTTP requests are executed on background threads, recalculate data each time the view appears
+        // this way, when the user asks to see data, it is the most recently refreshed data possible
+        BitlyHelperFunctions.getLinkHistory()
+        BitlyHelperFunctions.getLinkClicks()
     }
 
     // MARK: - Navigation
