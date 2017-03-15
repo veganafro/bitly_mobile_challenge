@@ -9,6 +9,8 @@
 import UIKit
 
 class LinkHistoryTableViewController: UITableViewController {
+    
+    var bitlinksArray = Array(BitlyHelperFunctions.linkHistorySet)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +40,18 @@ class LinkHistoryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        
+        // deque a cell to be reused
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
+        
         // Configure the cell...
-
+        // get a bitlink from the array of bitlinks
+        let bitlink = self.bitlinksArray[indexPath.row]
+        
+        // label the cell with the bitlink and cell details with the bitlink title
+        cell.textLabel?.text = bitlink
+        cell.detailTextLabel?.text = BitlyHelperFunctions.linkHistoryTable[bitlink]
+        
         return cell
     }
 
