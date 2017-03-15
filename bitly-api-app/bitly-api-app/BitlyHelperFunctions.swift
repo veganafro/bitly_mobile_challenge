@@ -19,6 +19,8 @@ class BitlyHelperFunctions: NSObject {
     static var baseURL = "https://api-ssl.bitly.com/v3/user/"
     static var accessToken = AppDelegate.globalAccessToken
     
+    static var linkHistorySet: [String] = []
+    
     /*
         The function below uses the /v3/user/link_save endpoint of the Bitly API to save a long URL
         as a Bitlink in a user's history.
