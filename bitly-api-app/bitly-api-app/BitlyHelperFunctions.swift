@@ -178,16 +178,9 @@ class BitlyHelperFunctions: NSObject {
                     
                     // traverse the levels of JSON nesting to access the link click data
                     let jsonData = json["data"] as! [String:AnyObject]
+                    
+                    // update the count of clicks using the value stored at 'total_clicks'
                     totalClicks = jsonData["total_clicks"]! as! Int
-                    print(totalClicks)
-//                    print(jsonData)
-//                    let linkClickData = jsonData["total_clicks"] as! [[String:AnyObject]]
-//                    
-//                    // iterate over each Bitlink and increment the total number of clicks
-//                    for link in linkClickData {
-//                        
-//                        totalClicks += (link["clicks"]! as! Int)
-//                    }
                 }
                 catch{
                     print("LINK CLICKS JSON SERIALIZATION USUCCSESSFULL")
@@ -196,7 +189,5 @@ class BitlyHelperFunctions: NSObject {
             
             // resume the task if it's been suspended
         }.resume()
-        
-        print(totalClicks)
     }
 }
