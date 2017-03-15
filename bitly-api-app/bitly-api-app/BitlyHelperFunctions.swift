@@ -75,7 +75,7 @@ class BitlyHelperFunctions: NSObject {
     static func getLinkHistory() {
         
         // begin by creating the full length endpoint that should be accessed
-        let endPoint = baseURL + "link_save?access_token=\(accessToken)"
+        let endPoint = baseURL + "link_history?access_token=\(accessToken)"
         
         // create a URLRequest object that creates a GET request to the endpoint created above
         var request = URLRequest(url: URL(string: endPoint)!)
@@ -103,11 +103,11 @@ class BitlyHelperFunctions: NSObject {
                 do {
                     
                     // create a variable to store pretty printed JSON
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:Any]
+                    let json = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:AnyObject]
                     
                     // traverse the levels of JSON nesting to access the link history
-                    let jsonData = json["data"] as! [String:Any]
-                    let linkHistoryData = jsonData["link_history"] as! [[String:Any]]
+                    let jsonData = json["data"] as! [String:AnyObject]
+                    let linkHistoryData = jsonData["link_history"] as! [[String:AnyObject]]
                     
                     // iterate over each Bitlink that is represented as a dictionary and store the links in the set
                     for link in linkHistoryData {
