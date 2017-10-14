@@ -66,7 +66,7 @@ class SaveLinksViewController: UIViewController {
         }
         
         // update the link history to contain the new link
-        BitlyHelperFunctions.getLinkHistory()
+//        BitlyHelperFunctions.getLinkHistory()
     }
 
     // MARK: - Navigation

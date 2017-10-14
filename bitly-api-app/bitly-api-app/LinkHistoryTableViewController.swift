@@ -11,6 +11,9 @@ import UIKit
 class LinkHistoryTableViewController: UITableViewController {
     
     var bitlinksArray = Array(BitlyHelperFunctions.linkHistorySet)
+    var baseURL = "https://api-ssl.bitly.com/v3/user/"
+    var accessToken = AppDelegate.globalAccessToken
+    var linkHistoryData: [[String:AnyObject]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +39,39 @@ class LinkHistoryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return BitlyHelperFunctions.linkHistorySet.count
+        let endPoint = baseURL + "link_history?access_token=\(accessToken)"
+        var request = URLRequest(url: URL(string: endPoint)!)
+        request.httpMethod = "GET"
+        
+        let session = URLSession.shared
+        
+        session.dataTask(with: request) {(data, response, error) -> Void in
+            let httpResponse = response as! HTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200) {
+                
+                do {
+                    
+                    let json = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:AnyObject]
+                    
+                    // traverse the levels of JSON nesting to access the link history data
+                    let jsonData = json["data"] as! [String:AnyObject]
+                    self.linkHistoryData = jsonData["link_history"] as! [[String:AnyObject]]
+                    
+                    self.tableView.dataSource = self.linkHistoryData as? UITableViewDataSource
+                    self.tableView.reloadData()
+                    print("$$$ DATA SOURCE RELOADED")
+                }
+                    
+                catch {
+                    print("LINK HISTORY JSON SERIALIZATION UNSUCCESSFUL!")
+                }
+                
+            }
+        }.resume()
+        
+        return self.linkHistoryData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,11 +81,11 @@ class LinkHistoryTableViewController: UITableViewController {
         
         // Configure the cell...
         // get a bitlink from the array of bitlinks
-        let bitlink = self.bitlinksArray[indexPath.row]
+//        let bitlink = self.bitlinksArray[indexPath.row]
         
         // label the cell with the bitlink and cell details with the bitlink title
-        cell.textLabel?.text = bitlink
-        cell.detailTextLabel?.text = BitlyHelperFunctions.linkHistoryTable[bitlink]
+//        cell.textLabel?.text = bitlink
+//        cell.detailTextLabel?.text = BitlyHelperFunctions.linkHistoryTable[bitlink]
         
         return cell
     }

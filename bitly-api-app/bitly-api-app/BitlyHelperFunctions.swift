@@ -135,7 +135,7 @@ class BitlyHelperFunctions: NSObject {
                 }
                 // catch any errors and print debugging statement
                 catch {
-                    print("LINK HISTORY JSON SERIALIZATION UNSUCCESSFULL")
+                    print("LINK HISTORY JSON SERIALIZATION UNSUCCESSFUL")
                 }
             }
             

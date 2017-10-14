@@ -28,7 +28,7 @@ class BaseViewController: UIViewController {
         
         // because HTTP requests are executed on background threads, recalculate data each time the view appears
         // this way, when the user asks to see data, it is the most recently refreshed data possible
-        BitlyHelperFunctions.getLinkHistory()
+//        BitlyHelperFunctions.getLinkHistory()
         BitlyHelperFunctions.getLinkClicks()
     }
     
@@ -60,7 +60,7 @@ class BaseViewController: UIViewController {
         
         // because HTTP requests are executed on background threads, recalculate data each time the view appears
         // this way, when the user asks to see data, it is the most recently refreshed data possible
-        BitlyHelperFunctions.getLinkHistory()
+//        BitlyHelperFunctions.getLinkHistory()
         BitlyHelperFunctions.getLinkClicks()
     }
 
